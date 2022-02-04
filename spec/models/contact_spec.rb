@@ -1,5 +1,5 @@
-require_relative '../config/environment'
-require_relative 'spec_helper'
+require_relative '../../config/environment'
+require_relative '../spec_helper'
 
 describe Contact, type: :model do
   describe 'contact creation' do

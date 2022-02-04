@@ -1,5 +1,5 @@
-require_relative '../config/environment'
-require_relative 'spec_helper'
+require_relative '../../config/environment'
+require_relative '../spec_helper'
 
 describe Phone, type: :model do
   describe 'phone creation' do
