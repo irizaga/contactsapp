@@ -4,8 +4,8 @@ require_relative '../spec_helper'
 describe Phone, type: :model do
   describe 'phone creation' do
     before :all do
-      @user = User.create(user_name: 'Joao')
-      @contact = @user.contacts.create(c_name: 'Jose')
+      @user = User.create!(user_name: 'Joao')
+      @contact = @user.contacts.create!(c_name: 'Jose')
       @contact.phones.create!(number: '999999999', phonekind: 'work', is_main: true)
     end
 

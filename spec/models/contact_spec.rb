@@ -4,8 +4,8 @@ require_relative '../spec_helper'
 describe Contact, type: :model do
   describe 'contact creation' do
     before :all do
-      @user = User.create(user_name: 'Joao')
-      @contact = @user.contacts.create(c_name: 'Jose')
+      @user = User.create!(user_name: 'Joao')
+      @contact = @user.contacts.create!(c_name: 'Jose')
     end
 
     after :all do

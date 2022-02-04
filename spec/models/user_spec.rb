@@ -13,7 +13,7 @@ describe User do
     end
 
     it 'fails on existing name' do
-      User.create(user_name: 'Joao')
+      User.create!(user_name: 'Joao')
       user = User.new(user_name: 'Joao')
       expect(user).not_to be_valid
     end

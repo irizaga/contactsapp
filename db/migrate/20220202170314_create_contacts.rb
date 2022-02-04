@@ -1,7 +1,7 @@
 class CreateContacts < ActiveRecord::Migration[6.1]
   def change
     create_table :contacts do |t|
-      t.string :c_name, unique: true
+      t.string :c_name
       t.date :birth
 
       t.references :user, null: false, foreign_key: true
