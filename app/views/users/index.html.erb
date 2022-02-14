@@ -1,0 +1,29 @@
+<!-- nesse header poderão ser listados os demais 
+controllers futuramente para facilitar a navegação -->
+
+<header class="header">
+  <div class="nav__list">
+    <li class="nav__item"><a href="/users">Users</a></li>
+  </div>
+</header>
+
+<table class="table-index">
+  <% if @users.count == 0 %>
+    <tr>
+      <td class="warning">No results</td>
+    </tr>
+  <% else %>
+    <tr>
+      <th> Name </th>
+      <th> Contacts </th>
+      <th> Phones </th>
+    </tr>
+  <% end %>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.user_name %></td>
+      <td><%= user.contacts.count %></td>
+      <td><%= user.phones.count %></td>
+    </tr>
+  <% end %>
+</table>
