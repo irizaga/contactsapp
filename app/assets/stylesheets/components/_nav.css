@@ -1,0 +1,64 @@
+.nav__list {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  list-style: none;
+  padding: 0 5%;
+}
+
+.nav__item {
+  display: flex;
+  cursor: pointer;
+}
+
+.nav__item > a {
+  width: 100%;
+  padding: 0.5em 1em;
+  color: #fff;
+  font-family: 'Monaco', sans-serif;
+  font-size: 1.25em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: underline 0.15em rgba(81, 185, 245, 0);
+  transition: text-decoration-color .3s;
+  text-underline-offset: 5px;
+  text-align: center;
+}
+
+.nav__item > a:hover {
+  text-decoration-color: rgba(81, 185, 245, 1);
+  color: #51b9f5;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav__list {
+    width: inherit;
+  }
+}
+
+.user-nav {
+  width: 100%;
+  padding: 10px 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.user-nav a {
+  text-decoration: none;
+  font-family: 'Monaco', sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: black;
+}
+
+.user-nav a:hover {
+  text-decoration: none;
+  background-color: black;
+  color:#51b9f5;
+}
+
+.user-nav a:visited {
+  text-decoration: none;
+}
