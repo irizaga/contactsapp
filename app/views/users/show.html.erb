@@ -1,0 +1,23 @@
+<header class="header">
+  <div class="nav__list">
+    <li class="nav__item"><a href="/users">Users</a></li>
+  </div>
+</header>
+
+
+<div class="user-main">
+  <section class="user-card">
+    <div class="users-info">
+      <p>Name: <%= @user.user_name %></p>
+      <p>Bio: <%= @user.bio %> </p>
+      <p>Age: <%= @user.age %></p>
+      <p>Contacts:</p>
+      <% @user.contacts.each do |contact| %>
+        <p class="contact-list"><%= contact.c_name %></p><br>
+      <% end %>
+      <form action="/">
+        <button type="submit" class="return-home"> HOME </button>
+      </form>
+    </div>
+  </section>
+</div>

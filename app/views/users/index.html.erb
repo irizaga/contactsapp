@@ -15,6 +15,9 @@
             <p>Name: <%= user.user_name %></p>
             <p>Contacts: <%= user.contacts.length %> </p>
             <p>Phones: <%= user.phones.length %> </p>
+            <nav class="user-nav">
+              <%= link_to 'SHOW', user_path(user) %>
+            </nav>
           </div>
         <% end %>
     </section>

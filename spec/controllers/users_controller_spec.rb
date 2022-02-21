@@ -33,4 +33,27 @@ RSpec.describe UsersController, type: :controller do
       end
     end
   end
+
+  describe 'user#show' do
+    render_views
+
+    before :all do
+      DatabaseCleaner.start
+      @user = User.create!(user_name: 'Joao')
+    end
+
+    after :all do
+      DatabaseCleaner.clean
+    end
+
+    it 'has 200 status code' do
+      get :show, params: { id: @user.id }
+      expect(response.status).to eq(200)
+    end
+
+    it 'shows user info' do
+      get :show, params: { id: @user.id }
+      expect(response.body).to match '<p>Name: Joao</p>'
+    end
+  end
 end
