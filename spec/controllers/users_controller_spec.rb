@@ -56,4 +56,16 @@ RSpec.describe UsersController, type: :controller do
       expect(response.body).to match '<p>Name: Joao</p>'
     end
   end
+
+  describe 'user#new/create' do
+    it 'new user page has status 200' do
+      get :new
+      expect(response.status).to eq(200)
+    end
+
+    it 'user creation returns status 302' do
+      post :create, params: { user: { user_name: 'Joao' } }
+      expect(response.status).to eq(302)
+    end
+  end
 end
