@@ -48,6 +48,7 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
+	gem 'database_cleaner-active_record'
 	gem 'net-smtp', require: false
 	gem 'rails-controller-testing'
 	gem 'rspec'
