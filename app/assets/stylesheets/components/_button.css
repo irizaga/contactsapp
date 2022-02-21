@@ -1,0 +1,19 @@
+.return-home {
+  font-family: 'Monaco', sans-serif;
+  font-size: 1em;
+  align-items: center;
+  font-weight: bold;
+  background-color: black;
+  color: #51b9f5;
+  width: 80px;
+  height: 30px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+}
+ 
+.return-home:hover {
+  background-color: #51b9f5;
+  color: black;
+  font-weight: bolder;
+}

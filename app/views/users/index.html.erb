@@ -1,32 +1,22 @@
-<!-- nesse header poderão ser listados os demais 
-controllers futuramente para facilitar a navegação -->
-
 <header class="header">
   <div class="nav__list">
     <li class="nav__item"><a href="/users">Users</a></li>
   </div>
 </header>
 
-<% if @users.length == 0 %>
-  <h1 class="warning"> No results </h1>
-
-<% else %>
-  <table class="table-home">
-    <thead>
-      <tr>
-        <th> Name </th>
-        <th> Contacts </th>
-        <th> Phones </th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @users.each do |user| %>
-        <tr>
-          <td><%= user.user_name %></td>
-          <td><%= user.contacts.length %></td>
-          <td><%= user.phones.length %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
+<div class="user-main">
+  <% if @users.length == 0 %>
+    <h1 class="warning"> No results </h1>
+  <% else %>
+    <section class="user-card">
+        <% users = @users.includes(:contacts, :phones) %>
+        <% users.each do |user|%>
+          <div class="users-info">
+            <p>Name: <%= user.user_name %></p>
+            <p>Contacts: <%= user.contacts.length %> </p>
+            <p>Phones: <%= user.phones.length %> </p>
+          </div>
+        <% end %>
+    </section>
+  <% end %>
+</div>
