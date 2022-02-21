@@ -1,0 +1,49 @@
+.form {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  text-align: center;
+}
+
+.form label {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.form input {
+  height: 30px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+  padding: 0 10px;
+  border: 2px solid black;
+}
+
+.form #user_bio {
+  height: 50px;
+  border-radius: 20px;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.submit-button {
+  font-size: 1.1em;
+  background-color: black;
+  color: #51b9f5;
+  border: 0;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  color: black;
+  background-color: #51b9f5;
+  border: 2px solid black;
+}
