@@ -90,4 +90,20 @@ RSpec.describe UsersController, type: :controller do
       expect(@user.user_name).to eq('Jose')
     end
   end
+
+  describe 'user#delete' do
+    before :all do
+      DatabaseCleaner.start
+      @user = User.create!(user_name: 'Joao')
+    end
+
+    after :all do
+      DatabaseCleaner.clean
+    end
+
+    it 'removes user correctly' do
+      delete :destroy, params: { id: @user.id }
+      expect(User.count).to eq(0)
+    end
+  end
 end
