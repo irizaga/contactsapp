@@ -20,7 +20,7 @@ RSpec.describe UsersController, type: :controller do
         get :index
         user = assigns :users
         expect(user.length).to eq(0)
-        expect(response.body).to match '<h1 class="warning"> No results </h1>'
+        expect(response.body).to match '<h1 class="main-heading"> No results </h1>'
       end
 
       it 'user count if users exist' do
@@ -66,6 +66,28 @@ RSpec.describe UsersController, type: :controller do
     it 'user creation returns status 302' do
       post :create, params: { user: { user_name: 'Joao' } }
       expect(response.status).to eq(302)
+    end
+  end
+
+  describe 'user#edit' do
+    before :all do
+      DatabaseCleaner.start
+      @user = User.create!(user_name: 'Joao')
+    end
+
+    after :all do
+      DatabaseCleaner.clean
+    end
+
+    it 'edit user page has status 200' do
+      get :edit, params: { id: @user.id }
+      expect(response.status).to eq(200)
+    end
+
+    it 'user info updates correctly' do
+      patch :update, params: { id: @user.id, user: { user_name: 'Jose' } }
+      @user.reload
+      expect(@user.user_name).to eq('Jose')
     end
   end
 end
