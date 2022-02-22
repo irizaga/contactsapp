@@ -19,6 +19,7 @@
             <nav class="user-nav">
               <%= link_to 'SHOW', user_path(user) %>
               <%= link_to 'EDIT', user_edit_path(user) %>
+              <%= link_to 'DELETE', user_path(user), :method => :delete %>
             </nav>
           </div>
         <% end %>

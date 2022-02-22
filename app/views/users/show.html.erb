@@ -14,7 +14,7 @@
       <p>Age: <%= @user.age %></p>
       <p>Contacts:</p>
       <% @user.contacts.each do |contact| %>
-        <p class="contact-list"><%= contact.c_name %></p><br>
+        <p class="contact-list"><%= contact.c_name %></p>
       <% end %>
       <form action="/">
         <button type="submit" class="return-home"> HOME </button>
