@@ -37,6 +37,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+    @user.contacts.destroy_all
     @user.destroy
 
     redirect_to root_url
