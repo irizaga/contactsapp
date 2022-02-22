@@ -5,23 +5,23 @@
 </header>
 
 <div>
-  <h1 class='main-heading'>New user:</h1>
+  <h1 class='main-heading'>Edit user: <%= @user.user_name %></h1>
   <div class='form'>
     <%= form_with model: @user do |form| %>
       <div>
-        <%= form.label :user_name, 'Name' %>
+        <%= form.label :user_name, 'New name' %>
       </div>
       <div>
         <%= form.text_field :user_name %>
       </div>
       <div>
-        <%= form.label :bio, 'Bio' %>
+        <%= form.label :bio, 'New bio' %>
       </div>
       <div>
         <%= form.text_area :bio %>
       </div>
       <div>
-        <%= form.label :age, 'Age' %>
+        <%= form.label :age, 'New age' %>
       </div>
       <div>
         <%= form.text_field :age %>
